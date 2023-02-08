@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+
+import os, sys
+
+#set locale
+a1 = "sudo apt update && sudo apt install locales"
+a2 = "sudo locale-gen en_US en_US.UTF-8"
+a3 = "sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
+a4 = "export LANG=en_US.UTF-8"
+a5 = "locale"
+
+#setup sources
+a6 = "sudo apt install software-properties-common"
+a7 = "sudo add-apt-repository universe"
+a8 = "sudo apt update && sudo apt install curl"
+a9 = "sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg"
+
+temp = "\"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\""
+a10 = "echo " + temp + " | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null"
+
+#install ros2 packages
+a11 = "dpkg --get-selections | grep hold"
+a12 = "sudo apt update && sudo apt upgrade"
+a13 = "sudo apt install ros-galactic-desktop"
+a14 = "sudo apt install ros-dev-tools"
+
+
+os.system(a1)
+os.system(a2)
+os.system(a3)
+os.system(a4)
+os.system(a5)
+os.system(a6)
+os.system(a7)
+os.system(a8)
+os.system(a9)
+os.system(a10)
+os.system(a11)
+os.system(a12)
+os.system(a13)
+os.system(a14)
