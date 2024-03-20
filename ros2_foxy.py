@@ -2,46 +2,23 @@
 
 import os, sys
 
-#set locale
-a1 = "sudo apt update -y && sudo apt install locales"
-a2 = "sudo locale-gen en_US en_US.UTF-8"
-a3 = "sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
-a4 = "export LANG=en_US.UTF-8"
-a5 = "locale"
+os.system("locale")
+os.system("sudo apt update && sudo apt install locales")
+os.system("sudo locale-gen en_US en_US.UTF-8")
+os.system("sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8")
+os.system("export LANG=en_US.UTF-8")
+os.system("locale")
 
-#setup sources
-a6 = "sudo apt install software-properties-common -y"
-a7 = "sudo add-apt-repository universe"
-a8 = "sudo apt update -y && sudo apt install curl -y"
-a9 = "sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg"
-
-temp = "\"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\""
-a10 = "echo " + temp + " | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null"
-
-
-
-#install ros2 packages
-a11 = "dpkg --get-selections | grep hold"
-a12 = "sudo apt update -y && sudo apt upgrade -y"
-a13 = "sudo apt install ros-foxy-desktop python3-argcomplete -y"
-a14 = "sudo apt install ros-dev-tools -y"
-a15 = "sudo apt install python3-colcon-common-extensions -y"
-
-os.system(a1)
-os.system(a2)
-os.system(a3)
-os.system(a4)
-os.system(a5)
-os.system(a6)
-os.system(a7)
-os.system(a8)
-os.system(a9)
-os.system(a10)
-os.system(a11)
-os.system(a12)
-os.system(a13)
-os.system(a14)
-os.system(a15)
+os.system("sudo apt install software-properties-common")
+os.system("sudo add-apt-repository universe")
+os.system("sudo apt update && sudo apt install curl -y")
+os.system("sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg")
+os.system("echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null")
+os.system("sudo apt update && sudo apt install -y \
+  libbullet-dev \
+  python3-pip \
+  python3-pytest-cov \
+  ros-dev-tools")
 
 # edit ros2 foxy ~/.bashrc
 
