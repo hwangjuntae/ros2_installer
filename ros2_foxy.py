@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os, sys
+import os
 
 os.system("locale")
 os.system("sudo apt update && sudo apt install locales")
@@ -12,14 +12,13 @@ os.system("locale")
 os.system("sudo apt install software-properties-common")
 os.system("sudo add-apt-repository universe")
 os.system("sudo apt update && sudo apt install curl -y")
-os.system("sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg")
+os.system("sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg -y ")
 os.system("echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null")
-os.system("sudo apt update && sudo apt install -y \
-  libbullet-dev \
-  python3-pip \
-  python3-pytest-cov \
-  ros-dev-tools")
+os.system("sudo apt update -y && sudo apt upgrade -y ")
+os.system("sudo apt install ros-foxy-ros-base python3-argcomplete -y")
 
+
+#---------------------------------------------------------------------------------------------------------------------------
 # edit ros2 foxy ~/.bashrc
 
 # ~/.bashrc command
@@ -28,6 +27,7 @@ os.system("echo \"alias eb='code ~/.bashrc'\" >> ~/.bashrc")
 os.system("echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc")
 
 os.system("echo \"source /opt/ros/foxy/setup.bash\" >> ~/.bashrc")
+os.system("echo \"alias ss='. install/setup.bash\"")
 os.system("echo \"alias cw='cd ~/ros2_ws'\" >> ~/.bashrc")
 os.system("echo \"alias cs='cd ~/ros2_ws/src'\" >> ~/.bashrc")
 os.system("echo \"alias ccd='colcon_cd'\" >> ~/.bashrc")
