@@ -2,6 +2,8 @@
 
 import os
 
+os.system("sudo apt install curl -y")
+
 os.system("locale")
 
 os.system("sudo apt update && sudo apt install locales")
@@ -30,8 +32,8 @@ os.system("sudo apt install ros-galactic-desktop -y")
 os.system("echo \"alias eb='code ~/.bashrc'\" >> ~/.bashrc")
 os.system("echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc")
 
-os.system("echo \"source /opt/ros/galatic/setup.bash\" >> ~/.bashrc")
-os.system("echo \"alias ss='. install/setup.bash\" >> ~/.bashrc")
+os.system("echo \"source /opt/ros/galactic/setup.bash\" >> ~/.bashrc")
+os.system("echo \"alias ss='. install/setup.bash'\" >> ~/.bashrc")
 os.system("echo \"alias cw='cd ~/ros2_ws'\" >> ~/.bashrc")
 os.system("echo \"alias cs='cd ~/ros2_ws/src'\" >> ~/.bashrc")
 os.system("echo \"alias ccd='colcon_cd'\" >> ~/.bashrc")
