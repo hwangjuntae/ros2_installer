@@ -21,7 +21,7 @@ os.system("echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/ke
 
 os.system("sudo apt update -y && sudo apt upgrade -y")
 os.system("sudo apt install ros-galactic-ros-base -y")
-os.system("sudo apt install python3-colcon-common-extensions")
+os.system("sudo apt install python3-colcon-common-extensions -y")
 
 #---------------------------------------------------------------------------------------------------------------------------
 # edit ros2 foxy ~/.bashrc
