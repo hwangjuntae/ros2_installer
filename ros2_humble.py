@@ -20,7 +20,7 @@ os.system("sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master
 os.system("echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main\" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null")
 
 os.system("sudo apt update -y && sudo apt upgrade -y")
-os.system("sudo apt install ros-humble-desktop -y")
+os.system("sudo apt install ros-humble-desktop-full -y")
 os.system("sudo apt install python3-colcon-common-extensions -y")
 
 #---------------------------------------------------------------------------------------------------------------------------
