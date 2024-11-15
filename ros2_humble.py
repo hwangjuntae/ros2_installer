@@ -22,6 +22,9 @@ os.system("echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/ke
 os.system("sudo apt update -y && sudo apt upgrade -y")
 os.system("sudo apt install ros-humble-desktop-full -y")
 os.system("sudo apt install python3-colcon-common-extensions -y")
+os.system("sudo apt install -y python3-catkin-pkg")
+os.system("sudo apt install -y python3-colcon-common-extensions python3-rosdep")
+
 
 #---------------------------------------------------------------------------------------------------------------------------
 # edit ros2 foxy ~/.bashrc
@@ -30,7 +33,7 @@ os.system("sudo apt install python3-colcon-common-extensions -y")
 
 os.system("echo \"alias eb='code ~/.bashrc'\" >> ~/.bashrc")
 os.system("echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc")
-
+os.system("echo \"\" >> ~/.bashrc")
 os.system("echo \"source /opt/ros/humble/setup.bash\" >> ~/.bashrc")
 os.system("echo \"alias ss='. install/setup.bash'\" >> ~/.bashrc")
 os.system("echo \"alias cw='cd ~/ros2_ws'\" >> ~/.bashrc")
@@ -38,7 +41,7 @@ os.system("echo \"alias cs='cd ~/ros2_ws/src'\" >> ~/.bashrc")
 os.system("echo \"alias ccd='colcon_cd'\" >> ~/.bashrc")
 os.system("echo \"export ROS_DOMAIN_ID=30\" >> ~/.bashrc")
 os.system("echo \"export ROS_NAMESPACE=robot1\" >> ~/.bashrc")
-
+os.system("echo \"\" >> ~/.bashrc")
 # build
 os.system("echo \"alias cb='colcon build --symlink-install'\" >> ~/.bashrc")
 os.system("echo \"alias cbp='colcon build --symlink-install --packages-select'\" >> ~/.bashrc")
@@ -46,23 +49,23 @@ os.system("echo \"alias cbu='colcon build --symlink-install --packages-up-to'\" 
 os.system("echo \"alias ct='colcon test'\" >> ~/.bashrc")
 os.system("echo \"alias ctp='colcon test --packages-select'\" >> ~/.bashrc")
 os.system("echo \"alias ctr='colcon test-result'\" >> ~/.bashrc")
-
+os.system("echo \"\" >> ~/.bashrc")
 # topic list
 os.system("echo \"alias rt='ros2 topic list'\" >> ~/.bashrc")
 os.system("echo \"alias re='ros2 topic echo'\" >> ~/.bashrc")
 os.system("echo \"alias rn='ros2 node list'\" >> ~/.bashrc")
-
+os.system("echo \"\" >> ~/.bashrc")
 # etc set
 os.system("echo \"alias kill='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'\" >> ~/.bashrc")
 os.system("echo \"alias af='ament_flake8'\" >> ~/.bashrc")
 os.system("echo \"alias ac='ament_cpplint'\" >> ~/.bashrc")
-
+os.system("echo \"\" >> ~/.bashrc")
 # test
 os.system("echo \"alias testpub='ros2 run demo_nodes_cpp talker'\" >> ~/.bashrc")
 os.system("echo \"alias testsub='ros2 run demo_nodes_cpp listener'\" >> ~/.bashrc")
 os.system("echo \"alias testpubimg='ros2 run image_tools cam2image'\" >> ~/.bashrc")
 os.system("echo \"alias testsubimg='ros2 run image_tools showimage'\" >> ~/.bashrc")
-
+os.system("echo \"\" >> ~/.bashrc")
 # os.system()
 
 
